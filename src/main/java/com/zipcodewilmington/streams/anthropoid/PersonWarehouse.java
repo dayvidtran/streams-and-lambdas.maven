@@ -70,7 +70,7 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return a mapping of Person Id to the respective Person name
      */ // TODO
     public Map<Long, String> getIdToNameMap() {
-        return null;
+        return people.stream().collect(Collectors.toMap(Person :: getPersonalId,Person::getName));
     }
 
 
@@ -78,7 +78,7 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return Stream of Stream of Aliases
      */ // TODO
     public Stream<Stream<String>> getNestedAliases() {
-        return null;
+        return people.stream().map((p) -> Arrays.stream(p.getAliases()));
     }
 
 
@@ -86,7 +86,7 @@ public final class PersonWarehouse implements Iterable<Person> {
      * @return Stream of all Aliases
      */ // TODO
     public Stream<String> getAllAliases() {
-        return null;
+        return people.stream().flatMap((p) -> Arrays.stream(p.getAliases()));
     }
 
     // DO NOT MODIFY
