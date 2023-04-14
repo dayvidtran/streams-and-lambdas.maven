@@ -34,6 +34,6 @@ public class StreamMap {
      * @return - a Stream of several Streams of single characters
      */ //TODO
     public static Stream<String> wordsFlatMap(String... stringArray) {
-        return return Stream.of(stringArray).flatMap(StreamMap::letters);
+        return Stream.of(stringArray).flatMap(StreamMap::letters);
     }
 }
